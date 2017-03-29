@@ -1,0 +1,34 @@
+mnc_user_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MNCuserBundle:Default:index }
+
+
+mnc_user_index:
+    path:     /user/index
+    defaults: { _controller: MNCuserBundle:User:index }
+
+mnc_user_add:
+    path:     /user/add
+    defaults: { _controller: MNCuserBundle:User:add }
+
+mnc_user_edit:
+    path:     /user/edit/{id}
+    defaults: { _controller: MNCuserBundle:User:edit }
+
+mnc_user_view:
+    path:     /user/view/{id}
+    defaults: { _controller: MNCuserBundle:User:view }
+
+mnc_user_delete:
+    path:     /user/delete/{id}
+    defaults: { _controller: MNCuserBundle:User:delete }
+
+
+
+# { _controller: MNCuserBundle:User:articles, page:1} --> por defecto cuando pongo como url  /user/articles
+# page: \d+ solo permite poner valores numericos
+mnc_user_articles:
+    path:     /user/parameters/{page}
+    defaults: { _controller: MNCuserBundle:User:parameters, page:1}
+    requirements:
+      page: \d+
